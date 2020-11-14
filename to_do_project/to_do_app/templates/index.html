@@ -1,8 +1,10 @@
 
 {% extends 'base.html '%}
-
+<!-- {% load static %} -->
 
 {% block content-style-1 %}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 {% load static %}
 <link rel="stylesheet" href="{% static 'to_do_app/css/styler.css' %}">
 
@@ -10,8 +12,15 @@
 
 {% block content-1 %}
 
-<div>
-    <p>Added in Index</p>
+<div class="main">
+    <p>To do App Django</p>
 </div>
+
+<div class="main-container-1"> 
+        <input type="text" name="name" width="50px">
+        <button type="button" class="btn btn-primary">Create</button>
+</div>
+
+
 
 {% endblock %}

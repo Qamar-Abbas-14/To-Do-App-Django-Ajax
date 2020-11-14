@@ -1,0 +1,26 @@
+.main p{
+    font-size: 30px;
+    color: rgb(240, 11, 11);
+}
+
+
+/* .btn {
+    padding: 50px;
+} */
+
+.main{
+    display: flex;
+    border: green;
+    justify-content: center;
+}
+
+.main-container-1{
+    display: flex;
+    border: green;
+    padding: 120px;
+    justify-content: center;
+}
+
+.main-container-1 input{
+    width: 500px;
+}
