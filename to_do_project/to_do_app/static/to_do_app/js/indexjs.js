@@ -5,7 +5,7 @@ $( document ).ready(function() {
     // $("#textbox-1").
 
     $( "#btn-2" ).click(function() {
-        // alert( "Handler for .click() called." );
+        // function for getting caurrent value in text box
         var value=$("#textbox-1").val();
         alert(value);
     });
