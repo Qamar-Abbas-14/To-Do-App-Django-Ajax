@@ -38,3 +38,7 @@
 .card{
     border: 1px solid rgba(0,0,0,.5);
 }
+
+#task-card-id{
+    cursor: pointer;
+}

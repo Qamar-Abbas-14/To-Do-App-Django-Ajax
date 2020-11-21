@@ -16,6 +16,9 @@ $( document ).ready(function() {
         var value=$(".card-body");
         console.log(value);
         console.log(value.text());
+        var elem= $("#task-card-id")
+        console.log(elem);
+        elem.remove();
     });
 
     
