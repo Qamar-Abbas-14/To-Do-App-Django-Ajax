@@ -30,10 +30,12 @@
 
 .card-body{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
-
+.card-body button{
+    padding-bottom: 16px;
+}
 
 .card{
     border: 1px solid rgba(0,0,0,.5);
@@ -42,3 +44,4 @@
 #task-card-id{
     cursor: pointer;
 }
+
