@@ -22,9 +22,13 @@ def mainpage(request):
             obj.save()
             msg_id=obj.id
             print(obj)
-        
-
         return JsonResponse({'data':msg_id})
+
+    if request.GET.get('task_id'):
+        del_data=request.GET.get('task_id')
+        ####Logic to delete data based on id
+        print("Delete the task # ", del_data)
+        return JsonResponse({'data_del': del_data})
 
     return render(request, 'index.html')
 

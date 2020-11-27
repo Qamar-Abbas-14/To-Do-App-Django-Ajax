@@ -66,12 +66,24 @@ $( document ).ready(function() {
         temp_lst=id_card.split('-')
         alert(temp_lst[1])
 
-        elem='#task-card-'+temp_lst[1];
-        alert(elem)
+        $.ajax({
+            url:'',
+            data:{task_id:temp_lst[1]},
+            success:function(response_del){
+                alert("Respnse form backend"+ response_del.data_del)
+                elem='#task-card-'+temp_lst[1];
+                alert(elem)
+                var get_elem = $(elem)
+                alert(get_elem.length)
+                get_elem.remove()
 
-        var get_elem = $(elem)
+            }
 
-        get_elem.remove()
+        }
+
+        )
+
+        
 
         
         
