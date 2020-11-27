@@ -13,13 +13,31 @@ $( document ).ready(function() {
         // alert(value);
         
         var textboxcontent=$('#textbox-1').val();
+        $.ajax({
+            url:'',
+            data: { 
+                content: textboxcontent
+        },
+        success: function (response){
         var cardcontainer=$(".card-container");
         var content="<div class='card mb-1' id='task-card-id'><div class='card-body'>"
         content +="<p>"+textboxcontent+"</p>";
         content += "<button type='button' id='btnn-3' class='close'><span aria-hidden='true'>&times;</span></button></div></div>";
 
         cardcontainer.append(content);
-    });
+        var elem=$('#textbox-1');
+        console.log("hi")
+        console.log(response.data)
+        
+        elem.val(""); //Clears the content of text-box
+        
+        }}
+
+        )});
+        
+
+
+
     // $( "#btn-3" ).click(function() {
         
     //     // function for getting caurrent value in text box
@@ -35,6 +53,9 @@ $( document ).ready(function() {
     //  });
      $(document).on("click","button[id^='btnn-']",function(){
         alert(this.id);
+        var id_card=this.id;
+        $('.'+'card-body'+id_card).remove();
+        
       });
 
     
