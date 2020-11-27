@@ -19,17 +19,24 @@ $( document ).ready(function() {
                 content: textboxcontent
         },
         success: function (response){
-        var cardcontainer=$(".card-container");
-        var content="<div class='card mb-1' id='task-card-id'><div class='card-body'>"
-        content +="<p>"+textboxcontent+"</p>";
-        content += "<button type='button' id='btnn-3' class='close'><span aria-hidden='true'>&times;</span></button></div></div>";
-
-        cardcontainer.append(content);
-        var elem=$('#textbox-1');
-        console.log("hi")
-        console.log(response.data)
         
+        if ((response.data !=='Task Already Exists') & (textboxcontent)){
+            var cardcontainer=$(".card-container");
+            var content="<div class='card mb-1' id='task-card-id'><div class='card-body'>"
+            content +="<p>"+textboxcontent+"</p>";
+            content += "<button type='button' id='btnn-3' class='close'><span aria-hidden='true'>&times;</span></button></div></div>";
+
+            cardcontainer.append(content);
+            var elem=$('#textbox-1');
+            console.log("hi")
+            console.log(response.data)
+            
+            
+
+        }
+        var elem=$('#textbox-1');
         elem.val(""); //Clears the content of text-box
+        
         
         }}
 

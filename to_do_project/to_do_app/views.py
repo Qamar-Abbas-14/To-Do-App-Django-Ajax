@@ -10,25 +10,19 @@ def mainpage(request):
         coming_data= request.GET.get('content')
         msg_exist=to_do_note.objects.filter(msg_body=coming_data)
         print(msg_exist)
-        pdb.set_trace()
+        
 
         if msg_exist:
             print("This Task Already Exist ...")
-            pdb.set_trace()
+            msg_id='Task Already Exists'
             pass
         else:
             obj=to_do_note()
             obj.msg_body = coming_data
             obj.save()
+            msg_id=obj.id
             print(obj)
-            pdb.set_trace()
         
-        
-
-        # tbl_id=to_do_note.objects.get(msg_body=coming_data)
-        # print(tbl_id)
-        # msg_id = tbl_id.id
-        # pdb.set_trace()
 
         return JsonResponse({'data':msg_id})
 
