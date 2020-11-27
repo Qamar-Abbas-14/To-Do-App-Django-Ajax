@@ -20,11 +20,13 @@ $( document ).ready(function() {
         },
         success: function (response){
         
-        if ((response.data !=='Task Already Exists') & (textboxcontent)){
+        if ((response.data !=='Task Already Exists') && (textboxcontent)){
+
+            var id_in_db=response.data
             var cardcontainer=$(".card-container");
-            var content="<div class='card mb-1' id='task-card-id'><div class='card-body'>"
+            var content="<div class='card mb-1' id='task-card-"+id_in_db+"'><div class='card-body' id ='card-body-" +id_in_db+"'>"
             content +="<p>"+textboxcontent+"</p>";
-            content += "<button type='button' id='btnn-3' class='close'><span aria-hidden='true'>&times;</span></button></div></div>";
+            content += "<button type='button' id='Cardbtn-"+id_in_db+ "' class='close'><span aria-hidden='true'>&times;</span></button></div></div>";
 
             cardcontainer.append(content);
             var elem=$('#textbox-1');
@@ -58,10 +60,20 @@ $( document ).ready(function() {
     // $('button[id^="btn-"]').on('click', function() {  
     //     alert("nnnn");
     //  });
-     $(document).on("click","button[id^='btnn-']",function(){
+     $(document).on("click","button[id^='Cardbtn-']",function(){
         alert(this.id);
         var id_card=this.id;
-        $('.'+'card-body'+id_card).remove();
+        temp_lst=id_card.split('-')
+        alert(temp_lst[1])
+
+        elem='#task-card-'+temp_lst[1];
+        alert(elem)
+
+        var get_elem = $(elem)
+
+        get_elem.remove()
+
+        
         
       });
 
