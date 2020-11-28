@@ -28,6 +28,8 @@ def mainpage(request):
         del_data=request.GET.get('task_id')
         ####Logic to delete data based on id
         print("Delete the task # ", del_data)
+        obj=to_do_note.objects.get(id=del_data)
+        obj.delete()
         return JsonResponse({'data_del': del_data})
 
     return render(request, 'index.html')
