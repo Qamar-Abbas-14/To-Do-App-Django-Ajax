@@ -16,6 +16,19 @@
     padding: 120px;
     justify-content: center;
 }
+.task-containers{
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.card-container {
+    margin: 2px;
+    padding: 10px;
+    border: 2px solid #00000060;
+    border-radius: 6px;
+}
 
 .main-container-1 input{
     width: 500px;
@@ -39,6 +52,12 @@
 
 .card{
     border: 1px solid rgba(0,0,0,.5);
+    /* overflow: hidden; */
+    /* flex-wrap: wrap; */
+    /* word-wrap: break-word; */
+    /* overflow: auto; */
+    word-break: break-all;
+
 }
 
 #task-card-id{
