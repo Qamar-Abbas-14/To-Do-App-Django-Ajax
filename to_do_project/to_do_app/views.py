@@ -32,6 +32,23 @@ def mainpage(request):
         obj.delete()
         return JsonResponse({'data_del': del_data})
 
-    return render(request, 'index.html')
+    all_pending_obj=to_do_note.objects.filter(status_task='NC')
+    print(all_pending_obj)
+    msg_list=[]
+    id_list=[]
+    data_lst=[]
+    for i in all_pending_obj:
+        msg=i.msg_body
+        ids=i.id
+        data_lst.append((ids,msg))
+
+    print(data_lst)
+
+
+    
+    data={'ids':id_list, 'note':msg_list}
+    
+    # temp=all_pending_obj.values_list('msg_body', flat=True)
+    return render(request, 'index.html', {'data':data_lst})
 
 # Create your views here.
