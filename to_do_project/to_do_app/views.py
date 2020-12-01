@@ -43,9 +43,6 @@ def mainpage(request):
         data_lst.append((ids,msg))
 
     print(data_lst)
-
-
-    
     data={'ids':id_list, 'note':msg_list}
     
     # temp=all_pending_obj.values_list('msg_body', flat=True)

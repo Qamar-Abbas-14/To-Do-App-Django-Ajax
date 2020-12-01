@@ -71,6 +71,7 @@
     /* word-wrap: break-word; */
     overflow: auto;
     word-break: break-all;
+    cursor: pointer;
 
 }
 

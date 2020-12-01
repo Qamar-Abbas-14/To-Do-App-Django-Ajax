@@ -1,6 +1,11 @@
 
 
 $( document ).ready(function() {
+
+    $('div.card').click(function() {
+        var status = $(this).attr('id');
+        alert(status)
+    });
     
     // $("#textbox-1").
 
