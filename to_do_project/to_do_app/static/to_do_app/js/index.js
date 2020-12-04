@@ -5,6 +5,12 @@ $( document ).ready(function() {
     $('div.card').click(function() {
         var status = $(this).attr('id');
         alert(status)
+        let a="'#"+status+"'"
+
+        //How to access child tags with Jquery $("p").css("background-color");
+        console.log($(this).children("div").children("p").text())
+        var chld_p = $(this).children("div").children("p")
+        console.log(chld_p)
     });
     
     // $("#textbox-1").
