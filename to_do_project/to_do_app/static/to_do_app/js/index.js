@@ -9,8 +9,15 @@ $( document ).ready(function() {
 
         //How to access child tags with Jquery $("p").css("background-color");
         console.log($(this).children("div").children("p").text())
+        var content_name=$(this).children("div").children("p").text()
+        alert("Do you want to change status of '"+ content_name +"' to be completed ?")
+
+        alert(status)
+
         var chld_p = $(this).children("div").children("p")
+
         console.log(chld_p)
+        chld_p.css("text-decoration","line-through")
     });
     
     // $("#textbox-1").
