@@ -32,6 +32,13 @@ def mainpage(request):
         obj.delete()
         return JsonResponse({'data_del': del_data})
 
+    #how list is get through ajax
+    if request.GET.getlist('id_of_done_task[]'):
+        content_of_done_task=request.GET.getlist('id_of_done_task[]')
+        print("Completed Task is : ",content_of_done_task)
+        pdb.set_trace()
+
+
     all_pending_obj=to_do_note.objects.filter(status_task='NC')
     print(all_pending_obj)
     msg_list=[]

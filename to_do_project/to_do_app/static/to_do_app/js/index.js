@@ -94,9 +94,10 @@ $( document ).ready(function() {
 
       $('div.card').click(function(event) {
         
-        console.log(event.target);
-        console.log($(event.target));
+        // console.log(event.target);
+        // console.log($(event.target));
         if ($(event.target).is('span')){
+            alert("Cross btn")
             event.preventDefault();
             return;
         }
@@ -110,12 +111,23 @@ $( document ).ready(function() {
         alert("Do you want to change status of '"+ content_name +"' to be completed ?")
 
         alert(status)
+        var id=status.split('-')[2]
+        alert(id)
 
         var chld_p = $(this).children("div").children("p")
 
-        console.log(chld_p)
-        console.log("Hi")
-        chld_p.css("text-decoration","line-through")
+        
+        
+
+        $.ajax({
+            url:'',
+            data:{'id_of_done_task':[content_name, id]},
+            success: function(){
+                chld_p.css("text-decoration","line-through")
+
+            }
+
+        })
     });
 
     
