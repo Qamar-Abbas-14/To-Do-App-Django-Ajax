@@ -2,23 +2,7 @@
 
 $( document ).ready(function() {
 
-    $('div.card').click(function() {
-        var status = $(this).attr('id');
-        alert(status)
-        let a="'#"+status+"'"
-
-        //How to access child tags with Jquery $("p").css("background-color");
-        console.log($(this).children("div").children("p").text())
-        var content_name=$(this).children("div").children("p").text()
-        alert("Do you want to change status of '"+ content_name +"' to be completed ?")
-
-        alert(status)
-
-        var chld_p = $(this).children("div").children("p")
-
-        console.log(chld_p)
-        chld_p.css("text-decoration","line-through")
-    });
+    
     
     // $("#textbox-1").
 
@@ -78,7 +62,8 @@ $( document ).ready(function() {
     // $('button[id^="btn-"]').on('click', function() {  
     //     alert("nnnn");
     //  });
-     $(document).on("click","button[id^='Cardbtn-']",function(){
+     $(document).on("click","button[id^='Cardbtn-']",function(event){
+        // event.stopPropagation()
         alert(this.id);
         var id_card=this.id;
         temp_lst=id_card.split('-')
@@ -106,6 +91,32 @@ $( document ).ready(function() {
         
         
       });
+
+      $('div.card').click(function(event) {
+        
+        console.log(event.target);
+        console.log($(event.target));
+        if ($(event.target).is('span')){
+            event.preventDefault();
+            return;
+        }
+        var status = $(this).attr('id');
+        alert(status);
+        let a="'#"+status+"'";
+
+        //How to access child tags with Jquery $("p").css("background-color");
+        console.log($(this).children("div").children("p").text())
+        var content_name=$(this).children("div").children("p").text()
+        alert("Do you want to change status of '"+ content_name +"' to be completed ?")
+
+        alert(status)
+
+        var chld_p = $(this).children("div").children("p")
+
+        console.log(chld_p)
+        console.log("Hi")
+        chld_p.css("text-decoration","line-through")
+    });
 
     
  
