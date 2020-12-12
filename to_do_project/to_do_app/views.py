@@ -36,6 +36,12 @@ def mainpage(request):
     if request.GET.getlist('id_of_done_task[]'):
         content_of_done_task=request.GET.getlist('id_of_done_task[]')
         print("Completed Task is : ",content_of_done_task)
+        completed_task_id=int(content_of_done_task[1])
+
+        obj=to_do_note.objects.get(id=completed_task_id)
+        obj.status_task='C'
+        obj.save()
+
         pdb.set_trace()
 
 

@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 task_status_choice=[
-    ('N', 'Completed'),
+    ('C', 'Completed'),
     ('NC', 'Not Completed'),
 ]
 class to_do_note(models.Model):
