@@ -55,16 +55,15 @@
 
     <div class="completed-task-container">
         <p style="text-align: center;">Completed Tasks..</p>
-        <div class="card mb-1" id="task-card-id">
-            <div class="card-body"><p>Card Content</p><button type="button" id="btn-3" class="close">
+        {% for id,cmp_task in data_C %}
+        <div class="card mb-1" id="task-card-{{id}}">
+            <div class="card-body" id="card-body-{{id}}"><p>{{cmp_task}}</p><button type="button" id="Cardbtn-{{id}}" class="close">
                 <span aria-hidden="true">&times;</span>
-            </button>
-            <button type="button" id="btno-4" class="tick">
-                <span aria-hidden="true">&#10004;</span>
-                <!-- <span class="fas fa-check-square"  style='font-size:24px;color:green'></span> -->
-            </button>
+                </button>
             </div>
         </div>
+        {% endfor %}
+
     </div>
 </div>
 
