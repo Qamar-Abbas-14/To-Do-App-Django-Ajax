@@ -42,23 +42,28 @@ def mainpage(request):
         obj.status_task='C'
         obj.save()
 
-        pdb.set_trace()
 
 
     all_pending_obj=to_do_note.objects.filter(status_task='NC')
     print(all_pending_obj)
     msg_list=[]
     id_list=[]
-    data_lst=[]
+    data_lst_NC=[]
     for i in all_pending_obj:
         msg=i.msg_body
         ids=i.id
-        data_lst.append((ids,msg))
+        data_lst_NC.append((ids,msg))
 
-    print(data_lst)
-    data={'ids':id_list, 'note':msg_list}
+    all_not_completed=to_do_note.objects.filter(status_task="C")
+    data_lst_C=[]
+
+    for i in all_not_completed:
+        msg=i.msg_body
+        ids=i.id
+        data_lst_C.append((ids,msg))
+
     
     # temp=all_pending_obj.values_list('msg_body', flat=True)
-    return render(request, 'index.html', {'data':data_lst})
+    return render(request, 'index.html', {'data':data_lst_NC, 'data_C':data_lst_C})
 
 # Create your views here.
