@@ -64,7 +64,9 @@ $( document ).ready(function() {
     //  });
      $(document).on("click","button[id^='Cardbtn-']",function(event){
         // event.stopPropagation()
-        alert(this.id);
+        console.log("Hi");
+        console.log(this.id);
+        
         var id_card=this.id;
         temp_lst=id_card.split('-')
         alert(temp_lst[1])

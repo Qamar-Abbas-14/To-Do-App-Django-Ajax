@@ -56,7 +56,7 @@
     <div class="completed-task-container">
         <p style="text-align: center;">Completed Tasks..</p>
         {% for id,cmp_task in data_C %}
-        <div class="card mb-1" id="task-card-{{id}}">
+        <div class="card mb-1" id="completed-task-card-{{id}}">
             <div class="card-body" id="card-body-{{id}}"><p>{{cmp_task}}</p><button type="button" id="Cardbtn-{{id}}" class="close">
                 <span aria-hidden="true">&times;</span>
                 </button>
