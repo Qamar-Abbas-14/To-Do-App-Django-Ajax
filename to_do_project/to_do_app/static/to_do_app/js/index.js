@@ -99,37 +99,41 @@ $( document ).ready(function() {
         // console.log(event.target);
         // console.log($(event.target));
         if ($(event.target).is('span')){
-            alert("Cross btn")
+            // alert("Cross btn")
             event.preventDefault();
             return;
         }
         var status = $(this).attr('id');
-        alert(status);
+        var id=status.split('-')[2]
+        console.log(id)
+        console.log(Number(id))
+        console.log(Number.isInteger(Number(id)))
+        // alert(status);
         let a="'#"+status+"'";
+        if (Number.isInteger(Number(id))){
 
         //How to access child tags with Jquery $("p").css("background-color");
         console.log($(this).children("div").children("p").text())
         var content_name=$(this).children("div").children("p").text()
         alert("Do you want to change status of '"+ content_name +"' to be completed ?")
-
-        alert(status)
-        var id=status.split('-')[2]
-        alert(id)
+        
+        
 
         var chld_p = $(this).children("div").children("p")
 
-        
-        
+       
+            $.ajax({
+                url:'',
+                data:{'id_of_done_task':[content_name, id]},
+                success: function(){
+                    chld_p.css("text-decoration","line-through")
+    
+                }
+    
+            })
 
-        $.ajax({
-            url:'',
-            data:{'id_of_done_task':[content_name, id]},
-            success: function(){
-                chld_p.css("text-decoration","line-through")
-
-            }
-
-        })
+        }
+       
     });
 
     
