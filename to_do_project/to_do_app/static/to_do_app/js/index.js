@@ -75,11 +75,11 @@ $( document ).ready(function() {
             url:'',
             data:{task_id:temp_lst[1]},
             success:function(response_del){
-                alert("Respnse form backend"+ response_del.data_del)
+                // alert("Respnse form backend"+ response_del.data_del)
                 elem='#task-card-'+temp_lst[1];
-                alert(elem)
+                // alert(elem)
                 var get_elem = $(elem)
-                alert(get_elem.length)
+                // alert(get_elem.length)
                 get_elem.remove()
 
             }
@@ -115,13 +115,10 @@ $( document ).ready(function() {
         //How to access child tags with Jquery $("p").css("background-color");
         console.log($(this).children("div").children("p").text())
         var content_name=$(this).children("div").children("p").text()
-        alert("Do you want to change status of '"+ content_name +"' to be completed ?")
-        
-        
-
+        var confrim=confirm("Do you want to change status of '"+ content_name +"' to be completed ?")
         var chld_p = $(this).children("div").children("p")
 
-       
+        if (confrim){
             $.ajax({
                 url:'',
                 data:{'id_of_done_task':[content_name, id]},
@@ -131,6 +128,7 @@ $( document ).ready(function() {
                 }
     
             })
+        }
 
         }
        
